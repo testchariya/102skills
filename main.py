@@ -45,4 +45,4 @@
 # # print(', '.join(list3))  ## THIS DOES NOT WORK BECAUSE THE LIST IS NOT STRINGS MUST USE THE MAP FUNCTION TO CONVERT
 # print(', '.join(map(str, list3)))
 
-# 4. 
+# 4.
