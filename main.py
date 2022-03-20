@@ -117,14 +117,44 @@
 # 10. Define a class which has at least two methods: getstring: to get a string from a user.  printsrting: to print
 # the string in upper case.  include a test function to test the class methods
 
-class strings:
-    def __init__(self):
-        self.text = ""
 
-    def getstring(self):
-        self.text = input("Provde a string: ")
+# class Strings:
+#     def __init__(self):
+#         self.text = ""
+#
+#     def getstring(self):
+#         self.text = input("Provide a string: ")
+#
+#     def printstring(self):
+#         print(self.text.upper())
+#
+#
+# first = Strings()
+# first.getstring()
+# first.printstring()
 
-    def printstring(self):
-        print(self.text)
+# 11. Define a class, which have a class parameter and have a same instance parameter
 
-strings
+
+# class Person:
+#     default_name = "Unknown"
+#
+#     def __init__(self, name=default_name):
+#         self.name = name
+#
+#
+# jon = Person("Jon")
+# print(jon.name)
+# bob = Person()
+# print(bob.name)
+# bob.name = "Bob"
+# print(bob.name)
+
+# 12. Write a program that accepts a sentence and calculates the number of upper and lower case letters
+
+text = input("Please give me a sentence: ")
+upper = 0
+lower = 0
+upper = sum(1 for u in text if u.isupper())
+lower = sum(1 for l in text if l.islower())
+print(f"There are {upper} upper case and {lower} lower case letters in that sentence.")
