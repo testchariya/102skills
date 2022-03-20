@@ -102,14 +102,29 @@
 # 9. Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included)
 # and the values are square of keys.  The function should just print the values only
 
-def square(num = 20):
-    dict = {}
-    for x in range(1,num+1):
-        dict[x] = x**2
-    print(dict)
-    print(dict.values())
-    print(dict.items())
-    # for (k, v) in dict.items():
-    #     print(v)
+# def square(num = 20):
+#     dict = {}
+#     for x in range(1,num+1):
+#         dict[x] = x**2
+#     print(dict)
+#     print(dict.values())
+#     print(dict.items())
+#     # for (k, v) in dict.items():
+#     #     print(v)
+#
+# square(10)
 
-square(10)
+# 10. Define a class which has at least two methods: getstring: to get a string from a user.  printsrting: to print
+# the string in upper case.  include a test function to test the class methods
+
+class strings:
+    def __init__(self):
+        self.text = ""
+
+    def getstring(self):
+        self.text = input("Provde a string: ")
+
+    def printstring(self):
+        print(self.text)
+
+strings
