@@ -157,3 +157,4 @@ text = input("Please give me a sentence: ")
 upper = sum(1 for upp in text if upp.isupper())
 lower = sum(1 for low in text if low.islower())
 print(f"There are {upper} upper case and {lower} lower case letters in that sentence.")
+
