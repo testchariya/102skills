@@ -20,7 +20,7 @@
 #
 # new_list = []
 # new_tuple = ()
-#
+
 # for i in my_list:
 #     if i not in new_list:
 #         new_list.append(i)
@@ -30,7 +30,7 @@
 # print(new_tuple)
 
 # 3. Write a program which will find all the numbers which are divisible by 7 but are not a multiple of 5 between 1000
-# and 1500 (both included).  The numbers obtained should be in a comma-sparated sequence on a single line.
+# and 1500 (both included).  The numbers obtained should be in a comma-separated sequence on a single line.
 
 # list3 = []
 #
@@ -66,14 +66,35 @@
 
 # 6. Write a program which can compute the given factorial of a number.
 
-def factorial(a):
-    pos = 0
-    fac = 1
-    for _ in range(1, a+1):
-        pos += _
-        fac *= _
-    print(f"the postorial is: {pos} and the factorial is {fac}")
+# def factorial(a):
+#     pos = 0
+#     fac = 1
+#     for _ in range(1, a+1):
+#         pos += _
+#         fac *= _
+#     print(f"the postorial is: {pos} and the factorial is {fac}")
+#
+#
+# a = input("Give me a number: ")
+# factorial(int(a))
+
+# 7. Use list comprehension to square each odd number in a list.  The list is input by a sequence of
+# comma-separated numbers.
+#
+# a = input("Give a list of comma-separated numbers: ")
+# print(a)
+# b = a.split(",")
+# c = [2 * int(num) for num in b if int(num) % 2 == 0]
+# print(c)
+
+# 8. Write a program to roll a dice and get a random output (1-6)
+import random
 
 
-a = input("Give me a number: ")
-factorial(int(a))
+def roll_dice():
+    print(random.randint(1, 6))
+
+
+times = int(input("How many rolls would you like? "))
+for _ in range(times):
+    roll_dice()
