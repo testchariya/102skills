@@ -88,13 +88,28 @@
 # print(c)
 
 # 8. Write a program to roll a dice and get a random output (1-6)
-import random
+# import random
+#
+#
+# def roll_dice():
+#     print(random.randint(1, 6))
+#
+#
+# times = int(input("How many rolls would you like? "))
+# for _ in range(times):
+#     roll_dice()
 
+# 9. Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included)
+# and the values are square of keys.  The function should just print the values only
 
-def roll_dice():
-    print(random.randint(1, 6))
+def square(num = 20):
+    dict = {}
+    for x in range(1,num+1):
+        dict[x] = x**2
+    print(dict)
+    print(dict.values())
+    print(dict.items())
+    # for (k, v) in dict.items():
+    #     print(v)
 
-
-times = int(input("How many rolls would you like? "))
-for _ in range(times):
-    roll_dice()
+square(10)
