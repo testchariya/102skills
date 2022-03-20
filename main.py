@@ -151,10 +151,18 @@
 # print(bob.name)
 
 # 12. Write a program that accepts a sentence and calculates the number of upper and lower case letters
+#
+# print("hello there")
+# text = input("Please give me a sentence: ")
+# upper = sum(1 for upp in text if upp.isupper())
+# lower = sum(1 for low in text if low.islower())
+# print(f"There are {upper} upper case and {lower} lower case letters in that sentence.")
 
-print("hello there")
-text = input("Please give me a sentence: ")
-upper = sum(1 for upp in text if upp.isupper())
-lower = sum(1 for low in text if low.islower())
-print(f"There are {upper} upper case and {lower} lower case letters in that sentence.")
+# 13. Write a program to display the fibonacci series up to the nth term where the btg tern is given by the user
 
+number = int(input("Provide a number to fibonacci: "))
+
+fib = ()
+
+for num in range(0, number+1):
+    fib.append()
