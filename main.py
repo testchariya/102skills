@@ -160,15 +160,46 @@
 
 # 13. Write a program to display the fibonacci series up to the nth term where the btg tern is given by the user
 
-number = int(input("Provide a number to fibonacci: "))
+# number = int(input("Provide a number to fibonacci: "))
+#
+# fib = [1, 1]
+#
+# for num in range(0, number+1):
+#     n1 = fib[-1]
+#     n2 = fib[-2]
+#     n3 = n1 + n2
+#     print(f"{num}: {n1} + {n2} = {n3}")
+#     fib.append(n3)
+#
+# print(fib)
 
-fib = [1, 1]
+# 14.Define a class named American and its subclass NewYorker
 
-for num in range(0, number+1):
-    n1 = fib[-1]
-    n2 = fib[-2]
-    n3 = n1 + n2
-    print(f"{num}: {n1} + {n2} = {n3}")
-    fib.append(n3)
+# class American:
+#     pass
+#
+#
+# class NewYorker(American):
+#     pass
+#
+#
+# anAmerican = American()
+# aNewYorker = NewYorker()
+#
+# print(anAmerican)
+# print(aNewYorker)
 
-print(fib)
+# 15. Define a class Circle which can be constructed by a radius.  The Circle class has a method which can
+# compute the area.
+
+class Circle:
+    def __init__(self, rad):
+        self.radius = rad
+
+    def area(self):
+        print(f"circle of radius {self.radius} has an area of {3.14*self.radius**2}")
+
+
+entry = input("give me a radius: ")
+myCircle = Circle(int(entry))
+myCircle.area()
