@@ -192,14 +192,59 @@
 # 15. Define a class Circle which can be constructed by a radius.  The Circle class has a method which can
 # compute the area.
 
-class Circle:
-    def __init__(self, rad):
-        self.radius = rad
+# class Circle:
+#     def __init__(self, rad):
+#         self.radius = rad
+#
+#     def area(self):
+#         print(f"circle of radius {self.radius} has an area of {3.14*self.radius**2}")
+#
+#
+# entry = input("give me a radius: ")
+# myCircle = Circle(float(entry))
+# myCircle.area()
 
-    def area(self):
-        print(f"circle of radius {self.radius} has an area of {3.14*self.radius**2}")
+# 16. Write a program using generator to print the even numbers between 0 and n in comma separated form while
+# n is input by console.
+
+# num = int(input("please provide a number: "))
+#
+# print(f"the even numbers between 0 and {num} are:")
+#
+# evens = []
+#
+# for x in range(0,num):
+#     if x % 2 == 0:
+#         evens.append(x)
+#
+# print(*evens)
+# print(*evens, sep=", ")
+
+# 17. Write statements using assert expression to verify that every number in the list [2,4,6,8] is even
+
+# list = [2, 4, 6, 8, 9]
+#
+# for x in list:
+#     assert x % 2 == 0, print(f"{x} is not even")
+
+# 18. Write a program to compress and decompress the string "Hello world! Python is great!"
+
+# import zlib
+#
+# string = "Hello world! Python is great!"
+# s0 = string.encode("utf-8")
+# print(s0)
+#
+# s1 = zlib.compress(s0)
+# print(s1)
+#
+# s2 = zlib.decompress(s1)
+# print(s2)
+#
+# s3 = string.encode("ascii")
+# print(s3)
+
+# 19. Define three individual functions to implement the filter, map and reduce functions.
+# Experiment on them as you like.
 
 
-entry = input("give me a radius: ")
-myCircle = Circle(int(entry))
-myCircle.area()
