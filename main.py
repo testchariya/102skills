@@ -63,3 +63,17 @@
 # a = input("Give me a number: ")
 # b = input("Give me another number: ")
 # print(f"The sum is: {sum(int(a), int(b))}")
+
+# 6. Write a program which can compute the given factorial of a number.
+
+def factorial(a):
+    pos = 0
+    fac = 1
+    for _ in range(1, a+1):
+        pos += _
+        fac *= _
+    print(f"the postorial is: {pos} and the factorial is {fac}")
+
+
+a = input("Give me a number: ")
+factorial(int(a))
