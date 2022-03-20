@@ -162,7 +162,13 @@
 
 number = int(input("Provide a number to fibonacci: "))
 
-fib = ()
+fib = [1, 1]
 
 for num in range(0, number+1):
-    fib.append()
+    n1 = fib[-1]
+    n2 = fib[-2]
+    n3 = n1 + n2
+    print(f"{num}: {n1} + {n2} = {n3}")
+    fib.append(n3)
+
+print(fib)
