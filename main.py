@@ -45,4 +45,21 @@
 # # print(', '.join(list3))  ## THIS DOES NOT WORK BECAUSE THE LIST IS NOT STRINGS MUST USE THE MAP FUNCTION TO CONVERT
 # print(', '.join(map(str, list3)))
 
-# 4.
+# 4. Define a function which can compute the sum of two numbers
+
+# def sum(a, b):
+#     return a + b
+#
+# a = input("Give me a number: ")
+# b = input("Give me another number: ")
+# print(f"The sum is: {sum(int(a), int(b))}")
+
+# 5. Define a function that can receive two integral numbers in string form and compute their sum then print it
+# in console.
+
+# def sum(a, b):
+#     return a + b
+#
+# a = input("Give me a number: ")
+# b = input("Give me another number: ")
+# print(f"The sum is: {sum(int(a), int(b))}")
