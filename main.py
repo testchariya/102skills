@@ -302,15 +302,15 @@
 # of 3. Using map and lambda functions multiply all integers of the list by 2 and add 15.  Use the reduce function from
 # functools module to simply add all integers.
 
-import functools
-foo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 15, 17, 18, 21]
-
-bar = list(filter(lambda x: x % 3 == 0, foo))
-print(bar)
-bar2 = list(map(lambda x: x*2+14, foo))
-print(bar2)
-bar3 = functools.reduce(lambda x, y: x + y, foo)
-print(bar3)
+# import functools
+# foo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 15, 17, 18, 21]
+#
+# bar = list(filter(lambda x: x % 3 == 0, foo))
+# print(bar)
+# bar2 = list(map(lambda x: x*2+14, foo))
+# print(bar2)
+# bar3 = functools.reduce(lambda x, y: x + y, foo)
+# print(bar3)
 
 """
 lis = [1, 3, 4, 10, 4]
@@ -327,3 +327,54 @@ Output
 The summation of list using accumulate is :[1, 4, 8, 18, 22]
 The summation of list using reduce is :22
 """
+
+# 21. Write a program to compute 1/2 + 2/3 + 3/4 + n/n+1 with a given n input by console (n>0)
+
+
+# def convergence(n):
+#     sum = 0
+#     for num in range (0, n+1):
+#         print(f"for {num} the current sum is {sum}")
+#         sum += n/(n+1)
+#     print(sum)
+#
+#
+# foo = int(input("please provide an n>0: "))
+# convergence(foo)
+
+# 22. With a given list [12,23,35,24,88,120,155,88,120,155], write a program to print this list after removing
+# all duplicate values with original order reserved.
+
+# initial_list = [12,23,35,24,88,120,155,88,120,155]
+# final_list = []
+#
+# for num in initial_list:
+#     if num not in final_list:
+#         final_list.append(num)
+#     else:
+#         print(f"{num} is a repeat")
+#
+# print(final_list)
+
+# 23. In a given sentence, find all the adverbs and their positions using the re module
+
+# import re
+# text = "Clearly, he felt she was inexcusably wrong"
+# for m in re.finditer(r"\w+ly", text):
+#     print('%d-%d: %s' % (m.start(), m.end(), m.group(0)))
+
+# 24. Using the re module, find a way to remove anything between parenthesis in a given string.
+
+# import re
+# text = "Clearly, he felt she was inexcusably (wrong)"
+# print(re.sub(r" ?\([^)]+\)", "", text))
+# print(text)
+
+# 25. Open a text file and find the longest word in the text file and find the length.
+
+with open('text.txt', 'r') as infile:
+    words = infile.read().split()
+print(words)
+max_len = len(max(words, key=len))
+max_word = [word for word in words if len(word) == max_len]
+print(f"{max_word} has length {max_len}")
