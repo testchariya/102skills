@@ -444,19 +444,31 @@ The summation of list using reduce is :22
 # 31. Develop a simple encryption and decryption program by shifting a character 2 ASCII values down for encryption
 # and 2 ASCII values back up for decryption
 
-request = input("(1) encrypt or (2) decrypt a message? ")
-message = input("Please enter your message now: ")
-result = ""
-print(message)
+# request = input("(1) encrypt or (2) decrypt a message? ")
+# message = input("Please enter your message now: ")
+# result = ""
+# print(message)
+#
+# if request == "1":
+#     for i in range(0, len(message)):
+#         result = result + chr(ord(message[i]) - 2)
+#     print(f"Your message is: {result}")
+# elif request == "2":
+#     for i in range(0, len(message)):
+#         result = result + chr(ord(message[i]) + 2)
+#     print(f"Your message is: {result}")
+# else:
+#     print("You've failed to enter a valid request.")
 
-if request == "1":
-    for i in range(0, len(message)):
-        result = result + chr(ord(message[i]) - 2)
-    print(f"Your message is: {result}")
-elif request == "2":
-    for i in range(0, len(message)):
-        result = result + chr(ord(message[i]) + 2)
-    print(f"Your message is: {result}")
-else:
-    print("You've failed to enter a valid request.")
+# 32. Develop a function to implement Binary Search
+# 1. sort an array
+# 2. see if midpoint is the given search item
+# 3. if not, if greater, go half way up, if lesser go half way down
+# 4. repeat until number found or no more bisections left to complete
 
+def bin_search(array, num):
+    
+
+li = [2,5,7,9,11,17,222]
+print(bin_search(li,11))
+print(bin_search(li,12))
