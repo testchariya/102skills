@@ -372,9 +372,91 @@ The summation of list using reduce is :22
 
 # 25. Open a text file and find the longest word in the text file and find the length.
 
-with open('text.txt', 'r') as infile:
-    words = infile.read().split()
-print(words)
-max_len = len(max(words, key=len))
-max_word = [word for word in words if len(word) == max_len]
-print(f"{max_word} has length {max_len}")
+# with open('text.txt', 'r') as infile:
+#     words = infile.read().split()
+# print(words)
+# max_len = len(max(words, key=len))
+# max_word = [word for word in words if len(word) == max_len]
+# print(f"{max_word} has length {max_len}")
+
+# 26. Open a text file and find out how many lines are in the text file.
+
+# with open('text.txt', 'r') as infile:
+#     lines = infile.readlines()
+#
+# print(lines)
+# print(len(lines))
+# print(lines[0])
+# print(lines[354])
+
+# 27. Using the NumPy module, create an arry of floating point values, square and find aboslute values of all elements
+
+# import numpy as np
+#
+# x = np.arange(-7, 8, 0.5)
+# print(x)
+# y = np.power(x, 3)
+# print(y)
+# z = np.absolute(x)
+# print(z)
+
+# 28. Use the numpy module to compute the trigonometric sine, cosine and tangent array of angles given in degrees
+
+# import numpy as np
+#
+# angles = [0, 30, 35, 60, 90]
+# print("sine array: ", end="")
+# print(np.sin(np.array(angles)*np.pi/180))
+# print("cosine array: ", end="")
+# print(np.cos(np.array(angles)*np.pi/180))
+# print("tangent array: ", end="")
+# print(np.tan(np.array(angles)*np.pi/180))
+
+# 29. Develop a program to multiply two matrices.  first matrix of order 3x3 and second matrix of order 3x4.
+
+# X = [[12, 7, 3],
+#      [4, 5, 6],
+#      [7, 8, 9]]
+#
+# Y = [[5, 8, 1, 2],
+#      [6, 7, 3, 0],
+#      [4, 5, 9, 1]]
+#
+# result = [[0,0,0,0],
+#           [0,0,0,0],
+#           [0,0,0,0]]
+#
+# for i in range(len(X)):
+#     for j in range(len(Y[0])):
+#         for k in range(len(Y)):
+#             result[i][j] += X[i][k] * Y[k][j]
+#
+# for r in result:
+#     print(r)
+
+# 30. Design a program to create a diamon pattern using the asterisk symbol by taking the side length as input
+# from the user.
+
+# length = int(input("What length do you want to draw? "))
+# for x in list(range(length)) + list(reversed(range(length-1))):
+#     print('{: <{w1}}{:*<{w2}}'.format('', '', w1=length-x-1, w2=x*2+1))
+
+# 31. Develop a simple encryption and decryption program by shifting a character 2 ASCII values down for encryption
+# and 2 ASCII values back up for decryption
+
+request = input("(1) encrypt or (2) decrypt a message? ")
+message = input("Please enter your message now: ")
+result = ""
+print(message)
+
+if request == "1":
+    for i in range(0, len(message)):
+        result = result + chr(ord(message[i]) - 2)
+    print(f"Your message is: {result}")
+elif request == "2":
+    for i in range(0, len(message)):
+        result = result + chr(ord(message[i]) + 2)
+    print(f"Your message is: {result}")
+else:
+    print("You've failed to enter a valid request.")
+
