@@ -466,9 +466,148 @@ The summation of list using reduce is :22
 # 3. if not, if greater, go half way up, if lesser go half way down
 # 4. repeat until number found or no more bisections left to complete
 
-def bin_search(array, num):
-    
+## MY SOLUTION
+# from math import ceil
+#
+#
+# def search(a, num, c, loc):
+#     print(f"Attempt #{c}, looking for {num} at position {loc}")
+#     c += 1
+#     step = len(a)/2**c
+#     print(f"The number {a[loc]} is at location {loc} and the current step is {step}")
+#     if a[loc] == num:
+#         print(f"Success!  The {num} was found in the list, found in {c} attempts at position {loc}")
+#     elif step < 0.3:
+#         print(f"Failure.  We could not find the number {num}, attempted {c} tries, closest number is {a[loc]} at"
+#               f" position {loc}")
+#     elif num > a[loc]:
+#         loc += ceil(step)
+#         search(a, num, c, loc)
+#     elif num < a[loc]:
+#         loc -= ceil(step)
+#         search(a, num, c, loc)
+#
+#
+# def bin_search(array, num):
+#     a = sorted(set(array))
+#     c = 1
+#     print(a)
+#     print(len(a))
+#     loc = int(len(a)/2) - 1
+#     search(a, num, c, loc)
+#
+#
+# li = [2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 30]
+# print(bin_search(li, 11))
+# print(bin_search(li, 32))
+#
+# ## THEIR SOLN
+# import math
+# def bin_search(li, element):
+#     li = sorted(set(li))
+#     bottom = 0
+#     top = len(li)-1
+#     index = -1
+#     while top >= bottom and index == -1:
+#         mid = int(math.floor((top+bottom)/2.0))
+#         print(f"{bottom} {mid} {top} : {li[mid]} = {element}?")
+#         if li[mid] == element:
+#             index = mid
+#         elif li[mid]>element:
+#             top = mid-1
+#         else:
+#             bottom = mid+1
+#     return index
+#
+# li = [2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+# 27, 28, 29, 31, 30]
+# print(bin_search(li, 11))
+# print(bin_search(li, 32))
 
-li = [2,5,7,9,11,17,222]
-print(bin_search(li,11))
-print(bin_search(li,12))
+# 33. Write a function to implement Linear/Sequential Search
+# In computer science, a linear search or sequential search is a method for finding an element within a list. It
+# sequentially checks each element of the list until a match is found or the whole list has been searched.
+
+
+# def seq_search(list, num):
+#     l = sorted(set(list))
+#     found = False
+#     for x in l:
+#         print(f"checking {x}")
+#         if x == num:
+#             print(f"{num} found in list")
+#             found = True
+#             break
+#
+#     if found == False:
+#         print(f"{num} not found in list")
+#
+# li = [2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#       27, 28, 29, 31, 30]
+# print(seq_search(li, 11))
+# print(seq_search(li, 32))
+
+# 34. Write a function to implement Bubble Sort
+# Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are
+# in wrong order.
+# li = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#       27, 28, 29, 31, 30, 1]
+#
+#
+# def bubble_sort(list):
+#     print(list)
+#     initial_list = list[:]
+#     starting_count = len(list)
+#     done = False
+#     while not done:
+#         done = True
+#         for x in range(0, len(list)-1):
+#             if len(list) > x + 1:
+#                 print(f"checking if {list[x]} is larger than {list[x+1]}")
+#                 if list[x] > list[x+1]:
+#                     print(f"switching {x} and {x+1}")
+#                     temp = list[x]
+#                     list[x] = list[x+1]
+#                     list[x+1] = temp
+#                     done = False
+#                 elif list[x] == list[x+1]:
+#                     print(f"removing duplicate {list[x]} at position {x}")
+#                     list.remove(list[x])
+#                     done = False
+#     print("\n\n")
+#     print(initial_list)
+#     print(f"starting list had {starting_count} elements")
+#     print(list)
+#     print(f"ending list has {len(list)} elements")
+#
+#
+# print(bubble_sort(li))
+
+## BOOK SOLUTION
+
+# def bubblesort(nlist):
+#     for passnum in range(len(nlist)-1,0,-1):  #Find the largest number and move it to the end
+#         for i in range(passnum):
+#             if nlist[i]>nlist[i+1]:
+#                 temp = nlist[i]
+#                 nlist[i] = nlist[i+1]
+#                 nlist[i+1] = temp
+#
+#
+# nlist = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#       27, 28, 29, 31, 30, 1]
+# bubblesort(nlist)
+# print(nlist)
+
+# 35. Write a function to implement Selection Sort
+"""
+The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order)
+ from unsorted part and putting it at the beginning. The algorithm maintains two sub-arrays in a given array.
+
+1) The subarray which is already sorted.
+2) Remaining subarray which is unsorted.
+
+In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is
+picked and moved to the sorted subarray.
+"""
+
