@@ -740,3 +740,176 @@ Unstable sorting technique.
 # print(nlist)
 
 # 38. Develop a function to implement Quick Sort
+"""
+Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given
+ array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. 
+
+Always pick first element as pivot.
+Always pick last element as pivot (implemented below)
+Pick a random element as pivot.
+Pick median as pivot.
+The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot,
+ put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all
+  greater elements (greater than x) after x. All this should be done in linear time. 
+"""
+
+# pivot = int(len(nlist) / 2)
+#
+# def partition(arr, piv):
+#     piv_val = arr[piv]
+#     left_arr = []
+#     right_arr = []
+#     for i in range(len(arr)):
+#         for j in range(len(arr+piv)):
+
+## BOOK SOLUTION
+
+
+# def quicksort(data_list):
+#     quicksorthlp(data_list,0,len(data_list)-1)
+#
+#
+# def quicksorthlp(data_list,first,last):
+#     if first<last:
+#         splitpoint = partition(data_list,first,last)
+#         quicksorthlp(data_list,first,splitpoint-1)
+#         quicksorthlp(data_list,splitpoint+1,last)
+#
+#
+# def partition(data_list,first,last):
+#     pivotvalue = data_list[first]
+#     leftmark=first+1
+#     rightmark=last
+#     done = False
+#     while not done:
+#         while leftmark<=rightmark and data_list[leftmark]<=pivotvalue:
+#             leftmark=leftmark+1
+#         while data_list[rightmark]>=pivotvalue and rightmark>=leftmark:
+#             rightmark=rightmark-1
+#         if rightmark<leftmark:
+#             done=True
+#         else:
+#             temp = data_list[leftmark]
+#             data_list[leftmark]=data_list[rightmark]
+#             data_list[rightmark]=temp
+#     temp=data_list[first]
+#     data_list[first]=data_list[rightmark]
+#     data_list[rightmark]=temp
+#     return rightmark
+#
+#
+# data_list = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#          27, 28, 29, 31, 30, 1]
+# quicksort(data_list)
+# print(data_list)
+
+## ONLINE SOLN
+
+# Quick sort in Python
+
+# function to find the partition position
+# def partition(array, low, high):
+#
+#   # choose the rightmost element as pivot
+#   pivot = array[high]
+#
+#   # pointer for greater element
+#   i = low - 1
+#
+#   # traverse through all elements
+#   # compare each element with pivot
+#   for j in range(low, high):
+#     if array[j] <= pivot:
+#       # if element smaller than pivot is found
+#       # swap it with the greater element pointed by i
+#       i = i + 1
+#
+#       # swapping element at i with element at j
+#       (array[i], array[j]) = (array[j], array[i])
+#
+#   # swap the pivot element with the greater element specified by i
+#   (array[i + 1], array[high]) = (array[high], array[i + 1])
+#
+#   # return the position from where partition is done
+#   return i + 1
+#
+# # function to perform quicksort
+# def quickSort(array, low, high):
+#   if low < high:
+#
+#     # find pivot element such that
+#     # element smaller than pivot are on the left
+#     # element greater than pivot are on the right
+#     pi = partition(array, low, high)
+#
+#     # recursive call on the left of pivot
+#     quickSort(array, low, pi - 1)
+#
+#     # recursive call on the right of pivot
+#     quickSort(array, pi + 1, high)
+#
+#
+# data = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#          27, 28, 29, 31, 30, 1]
+# print("Unsorted Array")
+# print(data)
+#
+# size = len(data)
+#
+# quickSort(data, 0, size - 1)
+#
+# print('Sorted Array in Ascending Order:')
+# print(data)
+
+# def partition(array, low, high):
+#     pivot = array[high]
+#     i = low - 1
+#     for j in range(low, high):
+#         if array[j] <= pivot:
+#             i = i + 1
+#             (array[i], array[j]) = (array[j], array[i])  # swap positions
+#     (array[i + 1], array[high]) = (array[high], array[i + 1])
+#     return i + 1
+#
+#
+# def quicksort(array, low, high):
+#     if low < high:
+#         pi = partition(array, low, high)
+#         quicksort(array, low, pi - 1)
+#         quicksort(array, pi + 1, high)
+#
+#
+# data = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#         27, 28, 29, 31, 30, 1]
+# quicksort(data, 0, len(data) - 1)
+# print('Sorted Array in Ascending Order:')
+# print(data)
+
+## MERGE SORT
+"""
+In computer science, merge sort (also commonly spelled as mergesort) is an efficient, general-purpose, and
+ comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the order of 
+ equal elements is the same in the input and output. Merge sort is a divide and conquer algorithm that was invented 
+ by John von Neumann in 1945.[2] A detailed description and analysis of bottom-up merge sort appeared in a report by 
+ Goldstine and von Neumann as early as 1948.[3]
+ 
+ Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves,
+  calls itself for the two halves, and then merges the two sorted halves. The merge() function is used for merging
+   two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and 
+   merges the two sorted sub-arrays into one. See the following C implementation for details.
+"""
+
+## COUNTING SORT
+"""
+In computer science, counting sort is an algorithm for sorting a collection of objects according to keys that are small
+ positive integers; that is, it is an integer sorting algorithm. It operates by counting the number of objects that
+  possess distinct key values, and applying prefix sum on those counts to determine the positions of each key value in
+   the output sequence. Its running time is linear in the number of items and the difference between the maximum key
+    value and the minimum key value, so it is only suitable for direct use in situations where the variation in keys is
+     not significantly greater than the number of items. It is often used as a subroutine in radix sort, another
+      sorting algorithm, which can handle larger keys more efficiently.
+"""
+
+# test = [1,2]
+# print(dir(test))  # The dir() method tries to return a list of valid attributes of the object.
+# print(dir())
