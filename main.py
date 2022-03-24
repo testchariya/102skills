@@ -611,3 +611,132 @@ In every iteration of selection sort, the minimum element (considering ascending
 picked and moved to the sorted subarray.
 """
 
+# nlist = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#       27, 28, 29, 31, 30, 1]
+#
+# slist = []
+# ulist = nlist[:]
+#
+# for x in range(len(ulist)):
+#     smallest_number = min(ulist)
+#     slist.append(smallest_number)
+#     ulist.remove(smallest_number)
+#
+# print(nlist)
+# print(ulist)
+# print(slist)
+
+##BOOK SOLUTION
+
+# def selectionSort(nlist):
+#     for fillslot in range(len(nlist)-1,0,-1):
+#         maxpos=0
+#         for location in range(1,fillslot+1):
+#             if nlist[location]>nlist[maxpos]:  # compare num (l2r) with num in last position
+#                 maxpos=location
+#
+#         temp=nlist[fillslot]    # put num in the fillslot position in location of largest found number
+#         nlist[fillslot]=nlist[maxpos]
+#         nlist[maxpos]=temp
+#
+# nlist = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#       27, 28, 29, 31, 30, 1]
+# selectionSort(nlist)
+# print(nlist)
+
+# 36. Develop a function to implement Insertion Sort
+
+"""
+Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands.
+ The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed 
+ at the correct position in the sorted part.
+Algorithm 
+To sort an array of size n in ascending order: 
+1: Iterate from arr[1] to arr[n] over the array. 
+2: Compare the current element (key) to its predecessor. 
+3: If the key element is smaller than its predecessor, compare it to the elements before. Move the greater elements one
+ position up to make space for the swapped element.
+"""
+## 134 steps
+# nlist = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#          27, 28, 29, 31, 30, 1]
+#
+# count = 0
+# for index1 in range(len(nlist)):
+#     count += 1
+#     print(count)
+#     for index2 in range(len(nlist)):
+#         if nlist[index1] < nlist[index2]:
+#             temp = nlist[index2]
+#             nlist[index2] = nlist[index1]
+#             nlist[index1] = temp
+#             count += 1
+#             print(count)
+#
+# print(nlist)
+
+## BOOK SOLN - takes 149 steps
+# nlist = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#          27, 28, 29, 31, 30, 1]
+#
+# def insertionsort(nlist):
+#     count = 0
+#     for index in range(1, len(nlist)):
+#         count += 1
+#         print(count)
+#         currentvalue = nlist[index]
+#         position = index
+#         while position > 0 and nlist[position-1] > currentvalue:
+#             nlist[position] = nlist[position-1]
+#             position = position - 1
+#             nlist[position] = currentvalue
+#             count += 1
+#             print(count)
+#
+#
+# insertionsort(nlist)
+# print(nlist)
+
+# 37. Develop a function to implement Shell Sort
+
+"""
+What is Shell Sort?
+In insertion sort, we could move the elements ahead only by one position at a time. If we wish to move an element to
+ a faraway position in insertion sort, a lot of movements were involved thus increasing the execution time. Shell sort overcomes this problem of insertion sort by allowing movement and swap of far-away elements as well.
+
+This sorting technique works by sorting elements in pairs, far away from each other and subsequently reduces their gap.
+ The gap is known as the interval. We can calculate this gap/interval with the help of Knuth’s formula.
+
+Knuth’s formula
+Let h be the interval having an initial value = 1
+Then, h = h*3 + 1
+
+Characteristics of Shell Sort
+Comparison-based sorting technique.
+Inplace sorting technique just like insertion sort.
+Works very well for medium-sized datasets.
+Unstable sorting technique.
+"""
+## 46 g/6, 67 g/5, 58 steps at g/4, 62 steps at g/3, 63 g/2, 78 g/1
+# nlist = [31, 2, 5, 7, 9, 11, 17, 17, 4, 1, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+#          27, 28, 29, 31, 30, 1]
+#
+# g = len(nlist)
+# i = int(g/6 + 1)
+# count = 0
+#
+# for y in range(i,1,-1):
+#     h = y
+#     count += 1
+#     print(count)
+#     for x in range(len(nlist) - h):
+#         if nlist[x] > nlist[x+h]:
+#             temp = nlist[x+h]
+#             nlist[x+h] = nlist[x]
+#             nlist[x] = temp
+#             count+= 1
+#             print(count)
+#
+# print(nlist)
+
+# 38. Develop a function to implement Quick Sort
