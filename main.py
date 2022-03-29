@@ -764,7 +764,7 @@ The key process in quickSort is partition(). Target of partitions is, given an a
 
 ## BOOK SOLUTION
 
-
+#
 # def quicksort(data_list):
 #     quicksorthlp(data_list,0,len(data_list)-1)
 #
@@ -913,3 +913,5 @@ In computer science, counting sort is an algorithm for sorting a collection of o
 # test = [1,2]
 # print(dir(test))  # The dir() method tries to return a list of valid attributes of the object.
 # print(dir())
+
+print("test of macbook pro editing")
